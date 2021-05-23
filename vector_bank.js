@@ -2,10 +2,10 @@ var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
 var array = [];
 var blocks;
-const screenWidth = window.screen.width
-const screenHeight = window.screen.height
-document.getElementById('myCanvas').height = screenHeight - 200;
-document.getElementById('myCanvas').width = screenWidth - 20;
+// const screenWidth = window.screen.width
+// const screenHeight = window.screen.height
+// document.getElementById('myCanvas').height = screenHeight - 200;
+// document.getElementById('myCanvas').width = screenWidth - 20;
 var w = canvas.width;
 var h = canvas.height;
 var k = 0;
@@ -135,11 +135,11 @@ function realocation(ctx, s, x_pos, y_pos) {
 }
 function del_pattern(numb) {
   var bl = {
-    top: 11,
-    left: 90
+    top: 90,
+    left: 1270
   };
-  window["b" + numb].style.left = bl.left + 'vw';
-  window["b" + numb].style.top = bl.top + 'vh';
+  window["b" + numb].style.left = bl.left + 'px';
+  window["b" + numb].style.top = bl.top + 'px';
 }
 function delet_money(mon) {
   mon.style.transition = "0s"; //не так
