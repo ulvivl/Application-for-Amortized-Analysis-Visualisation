@@ -1,0 +1,845 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link href="css/vector.css" rel="stylesheet">
+  <canvas id="myCanvas" width="1410" height="700"></canvas>
+  <div class=instext>
+    <p>Введите целое положительное число (<10) и нажмите кнопку &laquo;Ввод&raquo;</p>
+  </div>
+      <p><input type="text" id="number"></p>
+      <p><input type="button" value="Ввод" onclick="insert()" id="ins"></p>
+      <title></title>
+      <script src="vector_bank.js" defer></script>
+      <div style="display:none;">
+        <img id="source" src="IMG/c.jpg" width="200" height="127">
+      </div>
+      <img id="bag" src="IMG/bag.png" width="70" height="70">
+      <style>
+      #bag {
+        position: absolute;
+        left: 905px;
+        top: 60px;
+        width: 100px;
+        height: 100px;
+      }
+      #bl1 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl2 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl3 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl4 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl5 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl6 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl7 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl8 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl9 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl10 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl11 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl12 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl13 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl14 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl15 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl16 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl17 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl18 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl19 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl20 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl21 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl22 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl23 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl24 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl25 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl26 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl27 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #bl28 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #mon1 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon2 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon3 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon4 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon5 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon6 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon7 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon8 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon9 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon10 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon11 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon12 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon13 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon14 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon15 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon16 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon17 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon18 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon19 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon20 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon21 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon22 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon23 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon24 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon25 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon26 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon27 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon28 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon29 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon30 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon31 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon32 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon33 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon34 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon35 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon36 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon37 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon38 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon39 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+      #mon40 {
+        position: absolute;
+        left: 945px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+        transition: 1s;
+        filter: hue-rotate(0deg);
+      }
+
+
+      #b1 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b2 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b3 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b4 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b5 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b6 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b7 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b8 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b9 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b10 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b11 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b12 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b13 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b14 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b15 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+      #b16 {
+        position: absolute;
+        left: 1270px;
+        top: 90px;
+        width: 65px;
+        height: 65px;
+        transition: 0s;
+      }
+
+
+
+      </style>
+      <img id="bl1" src="IMG/block.png" width="100" height="100">
+      <img id="bl2" src="IMG/block.png" width="100" height="100">
+      <img id="bl3" src="IMG/block.png" width="100" height="100">
+      <img id="bl4" src="IMG/block.png" width="100" height="100">
+      <img id="bl5" src="IMG/block.png" width="100" height="100">
+      <img id="bl6" src="IMG/block.png" width="100" height="100">
+      <img id="bl7" src="IMG/block.png" width="100" height="100">
+      <img id="bl8" src="IMG/block.png" width="100" height="100">
+      <img id="bl9" src="IMG/block.png" width="100" height="100">
+      <img id="bl10" src="IMG/block.png" width="100" height="100">
+      <img id="bl11" src="IMG/block.png" width="100" height="100">
+      <img id="bl12" src="IMG/block.png" width="100" height="100">
+      <img id="bl13" src="IMG/block.png" width="100" height="100">
+      <img id="bl14" src="IMG/block.png" width="100" height="100">
+      <img id="bl15" src="IMG/block.png" width="100" height="100">
+      <img id="bl16" src="IMG/block.png" width="100" height="100">
+      <img id="bl17" src="IMG/block.png" width="100" height="100">
+      <img id="bl18" src="IMG/block.png" width="100" height="100">
+      <img id="bl19" src="IMG/block.png" width="100" height="100">
+      <img id="bl20" src="IMG/block.png" width="100" height="100">
+      <img id="bl21" src="IMG/block.png" width="100" height="100">
+      <img id="bl22" src="IMG/block.png" width="100" height="100">
+      <img id="bl23" src="IMG/block.png" width="100" height="100">
+      <img id="bl24" src="IMG/block.png" width="100" height="100">
+      <img id="bl25" src="IMG/block.png" width="100" height="100">
+      <img id="bl26" src="IMG/block.png" width="100" height="100">
+      <img id="bl27" src="IMG/block.png" width="100" height="100">
+      <img id="bl28" src="IMG/block.png" width="100" height="100">
+
+      <img id="b1" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b2" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b3" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b4" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b5" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b6" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b7" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b8" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b9" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b10" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b11" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b12" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b13" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b14" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b15" src="IMG/block_grey.png" width="100" height="100">
+      <img id="b16" src="IMG/block_grey.png" width="100" height="100">
+
+
+      <img id="mon1" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon2" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon3" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon4" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon5" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon6" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon7" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon8" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon9" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon10" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon11" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon12" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon13" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon14" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon15" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon16" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon17" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon18" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon19" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon20" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon21" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon22" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon23" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon24" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon25" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon26" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon27" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon28" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon29" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon30" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon31" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon32" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon33" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon34" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon35" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon36" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon37" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon38" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon39" src="IMG/c.jpg" width="20" height="20">
+      <img id="mon40" src="IMG/c.jpg" width="20" height="20">
+      <!-- <img id="mon33" src="IMG/c.jpg" width="20" height="20"> -->
+
+      <meta name="Generator" content="Cocoa HTML Writer">
+      <meta name="CocoaVersion" content="1894.6">
+      <style type="text/css">
+      </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

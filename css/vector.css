@@ -1,0 +1,28 @@
+canvas {
+  border: 2px solid purple;
+}
+#ins {
+  background-color: orange;
+  height:30px;
+  width:50px;
+  margin: 0;
+  position: absolute;
+  top: 795px;
+  left: 760px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+#number {
+  margin: 0;
+  position: absolute;
+  top: 795px;
+  left: 640px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.instext {
+  position: absolute;
+  top: 730px;
+  left: 420px;
+}

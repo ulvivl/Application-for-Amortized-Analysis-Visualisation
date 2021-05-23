@@ -1,0 +1,52 @@
+canvas {
+  border: 2px solid purple;
+}
+#ins {
+  background-color: orange;
+  height:30px;
+  width:70px;
+  margin: 0;
+  position: absolute;
+  top: 95%;
+  left: 45%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+#pop {
+  background-color: orange;
+  height:30px;
+  width:70px;
+  margin: 0;
+  position: absolute;
+  top: 95%;
+  left: 53%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+#clearButton {
+  margin: 0;
+  position: absolute;
+  top: 95%;
+  left: 62%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+#number {
+  margin: 0;
+  position: absolute;
+  top: 95%;
+  left: 36%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.poptext {
+  position: absolute;
+  top: 86%;
+  left: 51%;
+}
+.instext {
+  position: absolute;
+  top: 86%;
+  left: 15%;
+}
