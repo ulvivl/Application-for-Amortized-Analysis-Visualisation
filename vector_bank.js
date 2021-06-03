@@ -143,7 +143,7 @@ function del_pattern(numb) {
 }
 
 function delet_money(mon) {
-  mon.style.transition = "0s"; //не так
+  mon.style.transition = "0s";
   mon.style.left = 945 + 'px';
   mon.style.top = 50 + 'px';
   mon.style.filter = 'hue-rotate(0deg)';
