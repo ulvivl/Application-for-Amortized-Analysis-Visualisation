@@ -58,7 +58,6 @@ function insert() {
       top: y_gen - 35,
       left: x_gen + move + 60
     };
-    // window["ball" + c].style.filter = 'hue-rotate(0deg)';
     ball14.style.transition = "1s";
     window["ball" + c].style.transition = "1s";
 

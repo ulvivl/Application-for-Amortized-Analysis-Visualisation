@@ -71,6 +71,7 @@ function init(canvas) {
   ];
   return block;
 }
+
 function del_pattern(numb) {
   var bl = {
     top: 94,
@@ -149,6 +150,7 @@ function realocation(ctx, s, x_pos, y_pos) {
 function del_el(ctx, x, y) {
   ctx.clearRect(x, y, 30, 40);
 }
+
 function del_el2(ctx, x, y) {
   ctx.fillStyle = '#c0c0c0';
   ctx.fillRect(x - 2, y - 2, move, move);
@@ -271,48 +273,48 @@ function draw_square_green(canvas, num, x, y, side = move, if_real = 0, ind) {
     }
   }
   if (k < 4 || size - 1 != cap) {
-  if (size2 == 0) {
-    let blCoords = {
-      top: y,
-      left: x
-    };
-    window["blo" + '1'].style.left = blCoords.left + 'px';
-    window["blo" + '1'].style.top = blCoords.top + 'px';
-    writeMessage(canvas, "sz=" + size2, x + 6, y + 20, "black", '10pt Calibri')
-    writeMessage(canvas, "cap=" + cap2, x + 3, y + 35, "black", '10pt Calibri')
-    fblockCoord2.x = x;
-    fblockCoord2.y = y;
-  } else {
-    if (if_real == 0) {
-      ctx.clearRect(fblockCoord2.x + 6, fblockCoord2.y + 9, 31, 15);
-      if (size2 == cap2) {
-        writeMessage(canvas, "sz=" + size2, fblockCoord2.x + 6, fblockCoord2.y + 20, "red", '10pt Calibri')
+    if (size2 == 0) {
+      let blCoords = {
+        top: y,
+        left: x
+      };
+      window["blo" + '1'].style.left = blCoords.left + 'px';
+      window["blo" + '1'].style.top = blCoords.top + 'px';
+      writeMessage(canvas, "sz=" + size2, x + 6, y + 20, "black", '10pt Calibri')
+      writeMessage(canvas, "cap=" + cap2, x + 3, y + 35, "black", '10pt Calibri')
+      fblockCoord2.x = x;
+      fblockCoord2.y = y;
+    } else {
+      if (if_real == 0) {
+        ctx.clearRect(fblockCoord2.x + 6, fblockCoord2.y + 9, 31, 15);
+        if (size2 == cap2) {
+          writeMessage(canvas, "sz=" + size2, fblockCoord2.x + 6, fblockCoord2.y + 20, "red", '10pt Calibri')
+        } else {
+          writeMessage(canvas, "sz=" + size2, fblockCoord2.x + 6, fblockCoord2.y + 20, "black", '10pt Calibri')
+        }
+      }
+      let blCoords = {
+        top: y,
+        left: x
+      };
+      if (if_real != 0) {
+        ind += 2;
+        window["blo" + ind].style.left = blCoords.left + 'px';
+        window["blo" + ind].style.top = blCoords.top + 'px';
+        writeMessage(canvas, num, x + 17, y + 30, "black");
       } else {
-        writeMessage(canvas, "sz=" + size2, fblockCoord2.x + 6, fblockCoord2.y + 20, "black", '10pt Calibri')
+        window["blo" + c2].style.left = blCoords.left + 'px';
+        window["blo" + c2].style.top = blCoords.top + 'px';
+        ++c2;
+        writeMessage(canvas, array[size - 2], x + 17, y + 30, "black")
       }
     }
-    let blCoords = {
-      top: y,
-      left: x
-    };
-    if (if_real != 0) {
-      ind += 2;
-      window["blo" + ind].style.left = blCoords.left + 'px';
-      window["blo" + ind].style.top = blCoords.top + 'px';
-      writeMessage(canvas, num, x + 17, y + 30, "black");
-    } else {
-      window["blo" + c2].style.left = blCoords.left + 'px';
-      window["blo" + c2].style.top = blCoords.top + 'px';
-      ++c2;
-      writeMessage(canvas, array[size - 2], x + 17, y + 30, "black")
-    }
+    x_geng = x + side;
+    y_geng = y;
+  } else {
+    was_end = 1;
+    alert("нет места для выделения нужной памяти");
   }
-  x_geng = x + side;
-  y_geng = y;
-} else {
-  was_end = 1;
-  alert("нет места для выделения нужной памяти");
-}
 }
 
 function print() {
@@ -329,12 +331,12 @@ function print() {
   if (2 * size2 - cap2 >= 0) {
     var mess = " - ";
   } else {
-      var mess = " + ";
+    var mess = " + ";
   }
   if (2 * size - cap >= 10) {
     writeMessage(canvas, mess + (Math.abs(2 * size2 - cap2)) + " = " + (2 * size - cap - 2 * size2 + cap2 + 1), 800, h / 2 - 90, "black");
   } else {
-      writeMessage(canvas, mess + (Math.abs(2 * size2 - cap2)) + " = " + (2 * size - cap - 2 * size2 + cap2 + 1), 788, h / 2 - 90, "black");
+    writeMessage(canvas, mess + (Math.abs(2 * size2 - cap2)) + " = " + (2 * size - cap - 2 * size2 + cap2 + 1), 788, h / 2 - 90, "black");
   }
 }
 
@@ -374,7 +376,6 @@ function insert() {
       setTimeout(print, 80);
     }
     setTimeout(draw_square, 80, canvas, num, x_gen, y_gen);
-    // alert("oao3");
   } else {
     alert("число не удовлетворяет ограничениям");
   }
