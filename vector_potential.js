@@ -44,7 +44,6 @@ var realoc = [
   [blocks[3][0] - 160, blocks[3][1] + 100],
   [5, 580],
   [blocks[2][0] + blocks[2][2] + 10, blocks[2][1] + blocks[2][3] - move],
-  // [blocks[1][0] + blocks[1][2] + 10, blocks[2][1] - 50]
   [550, h / 2 + 90]
 ];
 
@@ -374,7 +373,6 @@ function insert() {
       setTimeout(print, 80);
     }
     setTimeout(draw_square, 80, canvas, num, x_gen, y_gen);
-    // alert("oao3");
   } else {
     alert("число не удовлетворяет ограничениям");
   }
