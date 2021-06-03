@@ -376,7 +376,6 @@ function insert() {
       setTimeout(print, 80);
     }
     setTimeout(draw_square, 80, canvas, num, x_gen, y_gen);
-    // alert("oao3");
   } else {
     alert("число не удовлетворяет ограничениям");
   }
