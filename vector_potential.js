@@ -25,19 +25,20 @@ var fblockCoord = {
   x: 0,
   y: 0
 };
+var was_end = 0;
 var fblockCoord2 = {
   x: 0,
   y: 0
 };
 var c = 2;
 var c2 = 2;
-writeMessage(canvas, "Обозначения:", w - 270, 50, "#000000", '20pt Calibri');
+writeMessage(canvas, "Обозначения:", w - 265, 50, "#000000", '20pt Calibri');
 writeMessage(canvas, "* Другие объекты в памяти: ", w - 320, 80, "#000000");
-writeMessage(canvas, "* Вектор: ", w - 240, 120, "#000000");
+writeMessage(canvas, "* Вектор: ", w - 250, 120, "#000000");
 writeMessage(canvas, "Ф(i) = 2*size - capacity", w - 260, 160, "#000000", '15pt Calibri');
-writeMessage(canvas, "Реальная стоимость операций:", w - 310, 180, "#000000", '15pt Calibri');
-writeMessage(canvas, "* push: 1 если size + 1 < capacity", w - 320, 205, "#000000");
-writeMessage(canvas, "* push: size если size + 1 = capacity", w - 335, 225, "#000000");
+writeMessage(canvas, "Реальная стоимость операций:", w - 300, 180, "#000000", '15pt Calibri');
+writeMessage(canvas, "* push: 1 если size + 1 < capacity", w - 310, 205, "#000000");
+writeMessage(canvas, "* push: size если size + 1 = capacity", w - 325, 225, "#000000");
 blocks = init(canvas);
 var realoc = [
   [blocks[3][0] - 160, blocks[3][1] + 100],
@@ -80,9 +81,13 @@ function del_pattern(numb) {
 }
 
 function realocation(ctx, s, x_pos, y_pos) {
+  if (was_end == 1) {
+    return;
+  }
   if (k >= 4) {
     alert("нет места для выделения нужной памяти");
-    return 1;
+    was_end = 1;
+    return;
   }
   alert("не достаточно памяти, нужна реалокация");
   var x_temp = realoc[k][0];
@@ -151,11 +156,18 @@ function del_el2(ctx, x, y) {
 
 
 function draw_square(canvas, num, x, y, side = move, if_real = 0, ind) {
+  if (was_end == 1) {
+    return;
+  }
   var ctx = canvas.getContext('2d');
   for (var i = 0; i < 5; i++) {
     if ((blocks[i][0] < (x + side) && blocks[i][0] + blocks[i][2] > (x + side) &&
         blocks[i][1] <= y && blocks[i][1] + blocks[i][3] >= y) || (x + side > w)) {
       var res1 = realocation(ctx, side, x, y);
+      if (was_end == 1) {
+        alert("oao2");
+        return;
+      }
       was_block = 1;
       x_gen = res1.x;
       y_gen = res1.y;
@@ -212,6 +224,9 @@ function draw_square(canvas, num, x, y, side = move, if_real = 0, ind) {
 }
 
 function redraw_green(x_old, y_old) {
+  if (was_end == 1) {
+    return;
+  }
   let x_temp = realoc[k1][0];
   let y_temp = realoc[k1][1] - move - 5;
   let blCoords = {
@@ -255,6 +270,7 @@ function draw_square_green(canvas, num, x, y, side = move, if_real = 0, ind) {
       return;
     }
   }
+  if (k < 4 || size - 1 != cap) {
   if (size2 == 0) {
     let blCoords = {
       top: y,
@@ -293,9 +309,16 @@ function draw_square_green(canvas, num, x, y, side = move, if_real = 0, ind) {
   }
   x_geng = x + side;
   y_geng = y;
+} else {
+  was_end = 1;
+  alert("нет места для выделения нужной памяти");
+}
 }
 
 function print() {
+  if (was_end == 1) {
+    return;
+  }
   ctx.clearRect(490, h / 2 - 110, 390, 26);
   writeMessage(canvas, "c' = 1 + ", 500, h / 2 - 90, "black");
   writeMessage(canvas, "Ф(стало)", 565, h / 2 - 90, "red");
@@ -316,6 +339,9 @@ function print() {
 }
 
 function print2() {
+  if (was_end == 1) {
+    return;
+  }
   ctx.clearRect(490, h / 2 - 110, 390, 26);
   writeMessage(canvas, "c' = " + size + " + ", 500, h / 2 - 90, "black");
   writeMessage(canvas, "Ф(стало)", 565, h / 2 - 90, "red");
@@ -329,6 +355,10 @@ function print2() {
 function insert() {
   var num = document.getElementById("number").value
   document.getElementById("number").value = "";
+  if (was_end == 1) {
+    alert("нет места для выделения нужной памяти");
+    return 1;
+  }
   if (parseInt(num) == num) {
     if (num >= 10 || num < 0) {
       alert("число не удовлетворяет ограничениям");
@@ -344,6 +374,7 @@ function insert() {
       setTimeout(print, 80);
     }
     setTimeout(draw_square, 80, canvas, num, x_gen, y_gen);
+    // alert("oao3");
   } else {
     alert("число не удовлетворяет ограничениям");
   }

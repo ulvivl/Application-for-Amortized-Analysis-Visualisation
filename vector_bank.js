@@ -2,10 +2,6 @@ var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
 var array = [];
 var blocks;
-// const screenWidth = window.screen.width
-// const screenHeight = window.screen.height
-// document.getElementById('myCanvas').height = screenHeight - 200;
-// document.getElementById('myCanvas').width = screenWidth - 20;
 var w = canvas.width;
 var h = canvas.height;
 var k = 0;
@@ -29,6 +25,9 @@ var fblockCoord = {
 writeMessage(canvas, "Обозначения:", w - 270, 50, "#000000", '20pt Calibri');
 writeMessage(canvas, "* Другие объекты в памяти: ", w - 320, 80, "#000000");
 writeMessage(canvas, "* Вектор: ", w - 240, 120, "#000000");
+writeMessage(canvas, "Стоимость операций: ", w - 260, 160, "#000000");
+writeMessage(canvas, "* push: 3 coins", w - 230, 180, "#000000");
+writeMessage(canvas, "* pop:  0 coins", w - 229, 200, "#000000");
 blocks = init(canvas);
 var realoc = [
   [blocks[3][0] - 160, blocks[3][1] + 100],
@@ -61,6 +60,7 @@ function init(canvas) {
   ];
   return block;
 }
+
 function realocation(ctx, s, x_pos, y_pos) {
   if (k >= 4) {
     alert("нет места для выделения нужной памяти");
@@ -133,6 +133,7 @@ function realocation(ctx, s, x_pos, y_pos) {
     y: y_temp
   };
 }
+
 function del_pattern(numb) {
   var bl = {
     top: 90,
@@ -141,6 +142,7 @@ function del_pattern(numb) {
   window["b" + numb].style.left = bl.left + 'px';
   window["b" + numb].style.top = bl.top + 'px';
 }
+
 function delet_money(mon) {
   mon.style.transition = "0s"; //не так
   mon.style.left = 945 + 'px';
@@ -230,6 +232,10 @@ function draw_square(canvas, num, x, y, side = move, if_real = 0, ind, x_old, y_
       window["mon" + mon].style.left = monCoords2.left + 'px';
       window["mon" + mon].style.top = monCoords2.top + 'px';
       ++mon;
+      window["mon" + '41'].style.transition = '1s';
+      movemoney(window["mon" + '41'], x + side, y);
+      setTimeout(change_colour, 1100, window["mon" + '41']);
+      setTimeout(delet_money, 2000, window["mon" + '41']);
     }
     ind += 2;
     window["bl" + ind].style.left = blCoords.left + 'px';
@@ -242,6 +248,10 @@ function draw_square(canvas, num, x, y, side = move, if_real = 0, ind, x_old, y_
     window["mon" + mon].style.transition = '1s';
     window["mon" + mon].style.left = monCoords1.left + 'px';
     window["mon" + mon].style.top = monCoords1.top + 'px';
+    window["mon" + '41'].style.transition = '1s';
+    movemoney(window["mon" + '41'], x + side, y);
+    setTimeout(change_colour, 1100, window["mon" + '41']);
+    setTimeout(delet_money, 2000, window["mon" + '41']);
     ++mon;
     if (size != 1) {
       window["mon" + mon].style.transition = '1s';
@@ -256,12 +266,14 @@ function draw_square(canvas, num, x, y, side = move, if_real = 0, ind, x_old, y_
     y: y
   };
 }
+
 function insert() {
-  if (the_end == 1) {
-    return 0;
-  }
   var num = document.getElementById("number").value
   document.getElementById("number").value = "";
+  if (the_end == 1) {
+    alert("нет места для выделения нужной памяти");
+    return 0;
+  }
   if (parseInt(num) == num) {
     if (num >= 10 || num < 0) {
       alert("число не удовлетворяет ограничениям");
@@ -278,6 +290,14 @@ function insert() {
   } else {
     alert("число не удовлетворяет ограничениям");
   }
+}
+function movemoney(mon, x, y) {
+  var ballCoords2 = {
+    top: y - 40,
+    left: x - 32
+  };
+  mon.style.left = ballCoords2.left + 'px';
+  mon.style.top = ballCoords2.top + 'px';
 }
 
 function writeMessage(canvas, message, x, y, colour, font = '15pt Calibri') {

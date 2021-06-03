@@ -44,12 +44,12 @@ function insert() {
       document.getElementById("number").value = "";
       return
     }
-    size += 1;
-    if (size > 13) {
+    if (size == 13) {
       alert("не достаточно места");
       document.getElementById("number").value = "";
       return;
     }
+    size += 1;
     let ballCoords = {
       top: y_gen - 35,
       left: x_gen + move + 20
@@ -60,6 +60,7 @@ function insert() {
     };
     // window["ball" + c].style.filter = 'hue-rotate(0deg)';
     ball14.style.transition = "1s";
+    window["ball" + c].style.transition = "1s";
 
     window["ball" + c].style.left = ballCoords.left + 'px';
     window["ball" + c].style.top = ballCoords.top + 'px';
