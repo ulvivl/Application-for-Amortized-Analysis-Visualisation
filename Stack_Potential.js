@@ -51,7 +51,7 @@ function draw_square(canvas, num, x, y, x_new, y_new) {
   };
 }
 
-function insert() { // max 12!!
+function insert() {
   var num = document.getElementById("number").value
   if (parseInt(num) == num) {
     if (num >= 10 || num < 0) {
