@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link href="css/stack_bank.css" rel="stylesheet">
+  <canvas id="myCanvas" width="1410" height="700"></canvas>
+  <div class=instext>
+    <p>Введите целое положительное число (<10) и нажмите кнопку &laquo;Ввод&raquo;</p>
+  </div>
+  <div class=poptext>
+    <p>Введите целое положительное число и нажмите кнопку &laquo;Удаление&raquo;</p>
+  </div>
+  <img id="bag" src="IMG/bag.png" width="70" height="70">
+  <style>
+    #bag {
+      position: absolute;
+      left: 1067px;
+      top: 298px;
+      width: 100px;
+      height: 100px;
+    }
+    #bank {
+      position: absolute;
+      left: -30px;
+      top: 220px;
+      width: 550px;
+      height: 250px;
+    }
+    #ball1 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition: 1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball2 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition: 1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball3 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition: 1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball4 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition: 1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball5 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition:  1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball6 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition:  1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball7 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition:  1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball8 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition:  1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball9 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition:  1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball10 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition:  1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball11 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition:  1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball12 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition:  1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball13 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition:  1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball14 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition:  1s;
+      filter: hue-rotate(0deg);
+    }
+    #ball15 {
+      position: absolute;
+      left: 1100px;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      transition:  1s;
+      filter: hue-rotate(0deg);
+    }
+  </style>
+  <img id="ball1" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball2" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball3" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball4" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball5" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball6" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball7" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball8" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball9" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball10" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball11" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball12" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball13" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball14" src="IMG/c.jpg" width="20" height="20">
+  <img id="ball15" src="IMG/c.jpg" width="20" height="20">
+
+  <p><input type="text" id="number"></p>
+  <p><input type="button" value="Ввод" onclick="insert()" id="ins"></p>
+  <p><input type="text" id="clearButton"></p>
+  <p><input type="button" value="Удаление" onclick="POP()" id="pop"></p>
+  <img id="bank" src="IMG/BANK.png" width="500" height="500">
+  <div style="display:none;">
+    <img id="source" src="IMG/c.jpg" width="200" height="127">
+  </div>
+  <title></title>
+  <script src="Stack_bank.js" defer></script>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.6">
+  <style type="text/css">
+  </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
