@@ -27,13 +27,12 @@ writeMessage(canvas, "* Другие объекты в памяти: ", w - 320,
 writeMessage(canvas, "* Вектор: ", w - 240, 120, "#000000");
 writeMessage(canvas, "Стоимость операций: ", w - 260, 160, "#000000");
 writeMessage(canvas, "* push: 3 coins", w - 230, 180, "#000000");
-writeMessage(canvas, "* pop:  0 coins", w - 229, 200, "#000000");
+writeMessage(canvas, "* realocation:  0 coins", w - 255, 200, "#000000");
 blocks = init(canvas);
 var realoc = [
   [blocks[3][0] - 160, blocks[3][1] + 100],
   [5, blocks[0][1] + 50],
   [blocks[2][0] + blocks[2][2] + 10, blocks[2][1] + blocks[2][3] - 80],
-  // [blocks[1][0] + blocks[1][2] + 10, blocks[2][1] - 50]
   [550, h / 2 + 90]
 ];
 
